@@ -654,7 +654,11 @@ export default defineComponent({
       if (!mergedShowRef.value) {
         openMenu()
       }
-      const { value } = e.target as unknown as HTMLInputElement
+      // @ts-expect-error
+      const { value } =
+        e.target.shadowRoot && e.composed
+          ? e.composedPath()[0] || e.target
+          : (e.target as unknown as HTMLInputElement)
       patternRef.value = value
       const { tag, remote } = props
       doSearch(value)
