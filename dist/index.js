@@ -76113,9 +76113,7 @@
           openMenu()
         }
         const { value } =
-          e.target.shadowRoot && e.composed
-            ? e.composedPath()[0] || e.target
-            : e.target
+          e.target.shadowRoot && e.composed ? { value: e.data } : e.target
         patternRef.value = value
         const { tag, remote } = props
         doSearch(value)

@@ -650,14 +650,13 @@ export default defineComponent({
           >) === optionValue
       )
     }
-    function handlePatternInput (e: InputEvent): void {
+    function handlePatternInput (e: any): void {
       if (!mergedShowRef.value) {
         openMenu()
       }
-      // @ts-expect-error
       const { value } =
         e.target.shadowRoot && e.composed
-          ? e.composedPath()[0] || e.target
+          ? { value: e.data } || e.target
           : (e.target as unknown as HTMLInputElement)
       patternRef.value = value
       const { tag, remote } = props

@@ -1253,7 +1253,7 @@ declare const _default: import('vue').DefineComponent<
     handleTriggerClick: () => void
     handleToggle: (tmNode: TreeNode<SelectOption>) => void
     handleDeleteOption: (option: SelectOption) => void
-    handlePatternInput: (e: InputEvent) => void
+    handlePatternInput: (e: any) => void
     handleClear: (e: MouseEvent) => void
     handleTriggerBlur: (e: FocusEvent) => void
     handleTriggerFocus: (e: FocusEvent) => void

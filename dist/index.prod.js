@@ -44854,8 +44854,7 @@
           handlePatternInput: function (t) {
             v.value || j()
             const { value: n } =
-              (t.target.shadowRoot && t.composed && t.composedPath()[0]) ||
-              t.target
+              t.target.shadowRoot && t.composed ? { value: t.data } : t.target
             h.value = n
             const { tag: r, remote: o } = e
             if (

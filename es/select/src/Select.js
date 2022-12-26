@@ -574,10 +574,9 @@ export default defineComponent({
       if (!mergedShowRef.value) {
         openMenu()
       }
-      // @ts-ignore
       const { value } =
         e.target.shadowRoot && e.composed
-          ? e.composedPath()[0] || e.target
+          ? { value: e.data } || e.target
           : e.target
       patternRef.value = value
       const { tag, remote } = props
